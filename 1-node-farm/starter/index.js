@@ -1,9 +1,8 @@
 const fs = require('fs');
 const http = require('http');
 const url = require('url');
-
 ////////////////////////////////////////////////////////////
-/////////////Files
+/////// Files
 
 //Blocking, synchronous way
 /*const textIn = fs.readFileSync('./txt/input.txt', 'utf-8');
@@ -42,10 +41,8 @@ console.log('Will read file');*/
 
 ///////////////////////////////////////////////////////////////
 // Server
-
 const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, 'utf-8');
 const dataObj = JSON.parse(data);
-
 // const server = http.createServer((req, res) => {
 //     console.log(req.url);
 //     const pathName = req.url;
