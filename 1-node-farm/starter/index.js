@@ -41,8 +41,7 @@ console.log('Will read file');*/
 
 ///////////////////////////////////////////////////////////////
 // Server
-const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, 'utf-8');
-const dataObj = JSON.parse(data);
+
 // const server = http.createServer((req, res) => {
 //     console.log(req.url);
 //     const pathName = req.url;
@@ -58,6 +57,8 @@ const dataObj = JSON.parse(data);
 //         res.end('<h1>This page could not be found</h1>');
 //     }
 // });
+const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, 'utf-8');
+const dataObj = JSON.parse(data);
 
 const server = http.createServer((req, res) => {
     console.log(req.url);
