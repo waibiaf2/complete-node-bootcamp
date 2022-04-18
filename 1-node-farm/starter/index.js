@@ -2,9 +2,11 @@
 const fs = require('fs');
 const http = require('http');
 const url = require('url');
+const slugify = require("slugify");
 
 //Custom module imports
 const replaceTemplate = require('./modules/replaceTemplate');
+
 
 ////////////////////////////////////////////////////////////
 /////// Files
