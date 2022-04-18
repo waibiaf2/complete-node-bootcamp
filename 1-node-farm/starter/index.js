@@ -7,7 +7,6 @@ const slugify = require("slugify");
 //Custom module imports
 const replaceTemplate = require('./modules/replaceTemplate');
 
-
 ////////////////////////////////////////////////////////////
 /////// Files
 
