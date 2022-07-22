@@ -8,7 +8,8 @@ const router = express.Router();
 *************************************************************/
 router
     .route('/')
-    .get(toursController.getAllTours);
+    .get(toursController.getAllTours)
+    .post(toursController.postTour);
 
 router
     .route('/:id')

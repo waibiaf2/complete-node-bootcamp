@@ -4,24 +4,25 @@ const tours = JSON.parse(
     fs.readFileSync(`${__dirname}/../dev-data/data/tours-simple.json`)
 );
 
-exports.getAllTours = (res,req)=> {
+exports.getAllTours = (req,res)=> {
     res.status(200).json({
         status: 'success',
+        requests: tours.length,
         data: {
             tours
         }
     })
 }
 
-exports.getTour = (res, req) => {
+exports.getTour = (req, res) => {
     //console.log(tours);
     const curId = req.params.id * 1;
     console.log(curId);
     const tour = tours.find(el => el.id === curId);
     console.log(tour);
     
-    if (!tours) {
-        res.status(204).json({
+    if (!tour) {
+        res.status(404).json({
             status: 'failed',
             message: 'Invalid Id'
         });
@@ -31,6 +32,22 @@ exports.getTour = (res, req) => {
         status:'success',
         data: {
             tour
+        }
+    })
+}
+
+exports.postTour = (req,res) => {
+    const newId = tours[tours.length -1].id + 1;
+    const newTour = Object.assign({id: newId}, req.body);
+    console.log(req.body);
+    
+    console.log(newId);
+    console.log(newTour);
+    
+    res.status(200).json({
+        status: 'Success',
+        data: {
+            newTour
         }
     })
 }
