@@ -9,3 +9,10 @@ const router = express.Router();
 router
     .route('/')
     .get(toursController.getAllTours);
+
+router
+    .route('/:id')
+    .get(toursController.getTour);
+
+
+module.exports = router;
