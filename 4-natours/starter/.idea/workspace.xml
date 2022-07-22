@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dbd36e4a-6288-4a86-801d-73dfcff140df" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/routes/toursRoute.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/toursController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/toursRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/toursRoute.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +33,10 @@
             <RecentBranchesForRepo>
               <option name="branches">
                 <list>
+                  <RecentBranch>
+                    <option name="branchName" value="section-6-practice" />
+                    <option name="lastUsedInstant" value="1658483087" />
+                  </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="section-6-express" />
                     <option name="lastUsedInstant" value="1658228998" />
