@@ -7,4 +7,4 @@ const router = express.Router();
 *************************************************************/
 router
     .route('/')
-    .get()
+    .get(toursController.getAllTours);
