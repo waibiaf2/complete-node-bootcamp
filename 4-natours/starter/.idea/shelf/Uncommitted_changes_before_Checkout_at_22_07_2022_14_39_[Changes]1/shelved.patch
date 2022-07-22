@@ -1,0 +1,35 @@
+Index: app.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>const express = require('express');\r\nconst morgan = require('morgan');\r\n\r\nconst app = express();\r\n\r\n/*Middleware\r\n***********************************************************/\r\napp.use(morgan('dev'))\r\n\r\napp.use('/api/v1/tours', ()=>{\r\n    console.log(`route mounted successfully`);\r\n})\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nmodule.exports = app;
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app.js b/app.js
+--- a/app.js	
++++ b/app.js	
+@@ -1,20 +1,15 @@
+ const express = require('express');
+ const morgan = require('morgan');
+ 
++const toursRouter = require('./routes/toursRoute');
++
+ const app = express();
+ 
+ /*Middleware
+ ***********************************************************/
+ app.use(morgan('dev'))
+ 
+-app.use('/api/v1/tours', ()=>{
+-    console.log(`route mounted successfully`);
+-})
+-
+-
+-
+-
+-
++app.use('/api/v1/tours', toursRouter);
+ 
+ 
+ module.exports = app;
+\ No newline at end of file

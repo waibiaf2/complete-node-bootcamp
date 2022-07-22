@@ -1,0 +1,15 @@
+Index: routes/tourRoutes.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>const express = require(\"express\");\r\nconst tourController = require('./../controllers/tourController');\r\n\r\nconst router = express.Router();\r\n\r\n/*Routes\r\n************************************************/\r\nrouter\r\n    .route('/')\r\n    .get(tourController.getAllTours)\r\n    .post(tourController.postTour);\r\n\r\nrouter\r\n    .route('/:id')\r\n    .get(tourController.getTour)\r\n    .patch(tourController.patchTour)\r\n    .delete(tourController.deleteTour);\r\n\r\nmodule.exports = router;
+===================================================================
+diff --git a/routes/tourRoutes.js b/routes/tourRoutes.js
+--- a/routes/tourRoutes.js	
++++ b/routes/tourRoutes.js	
+@@ -16,4 +16,4 @@
+     .patch(tourController.patchTour)
+     .delete(tourController.deleteTour);
+ 
+-module.exports = router;
+\ No newline at end of file
++module.exports = router;
