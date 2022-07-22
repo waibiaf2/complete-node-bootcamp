@@ -42,9 +42,7 @@ exports.postTour = (req,res) => {
     
     tours.push(newTour);
     
-    console.log(newId);
-    console.log(newTour);
-    
+    fs.writeFileSync(`${__dirname}/../dev-data/data/tours-simple.json`, )
     res.status(200).json({
         status: 'Success',
         data: {
