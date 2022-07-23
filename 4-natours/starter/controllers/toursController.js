@@ -52,3 +52,17 @@ exports.postTour = (req,res) => {
         })
     })
 }
+
+exports.updateTour = (req, res) => {
+    console.log(`The tour has been patched`);
+    res.status(204).json({
+        status: 'Success',
+        data: {
+            message: 'tour updated',
+        }
+    })
+};
+
+exports.deleteTour = (req, res) => {
+    console.log(`Tour has been deleted`);
+};

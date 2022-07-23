@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dbd36e4a-6288-4a86-801d-73dfcff140df" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/toursController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/toursController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev-data/data/tours-simple.json" beforeDir="false" afterPath="$PROJECT_DIR$/dev-data/data/tours-simple.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/toursRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/toursRoute.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,7 +87,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="daa5b1c4-b243-4115-9303-330c4f698354" name="Changes" comment="" />
+      <changelist id="dbd36e4a-6288-4a86-801d-73dfcff140df" name="Changes" comment="" />
       <created>1658228818700</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -95,6 +98,8 @@
       <workItem from="1658302662475" duration="927000" />
       <workItem from="1658354914327" duration="12231000" />
       <workItem from="1658390012959" duration="1185000" />
+      <workItem from="1658550907491" duration="160000" />
+      <workItem from="1658582405079" duration="1226000" />
     </task>
     <servers />
   </component>

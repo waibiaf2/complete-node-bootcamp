@@ -13,6 +13,8 @@ router
 
 router
     .route('/:id')
-    .get(toursController.getTour);
+    .get(toursController.getTour)
+    .patch(toursController.updateTour);
+
 
 module.exports = router;
