@@ -4,6 +4,7 @@ const morgan = require('morgan');
 const app = express();
 
 const toursRoute = require('./routes/toursRoute');
+const userRoute = require('./routes/usersRoutes');
 
 
 
@@ -12,6 +13,8 @@ const toursRoute = require('./routes/toursRoute');
 app.use(morgan('dev'));
 
 app.use('/api/v1/tours', toursRoute);
+app.use('/api/v1/users', userRoute);
+
 
 
 

@@ -54,15 +54,32 @@ exports.postTour = (req,res) => {
 }
 
 exports.updateTour = (req, res) => {
+    if (req.params.id * 1 > tours.length) {
+        res.status(404).json({
+            status: 'Failed',
+            message: 'Invalid ID'
+        })
+    }
     console.log(`The tour has been patched`);
     res.status(204).json({
         status: 'Success',
         data: {
-            message: 'tour updated',
+            message: '<Tour has been updated>...'
         }
     })
 };
 
 exports.deleteTour = (req, res) => {
-    console.log(`Tour has been deleted`);
+    if (req.params.id * 1 > tours.length) {
+        res.status(404).json({
+            status: 'Failed',
+            message: 'Invalid ID'
+        })
+    }
+    
+    res.status(204).json({
+        status: 'Success',
+        data: null
+    })
+    
 };
