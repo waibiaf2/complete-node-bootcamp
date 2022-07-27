@@ -5,7 +5,7 @@ const tours = JSON.parse(
 );
 
 exports.checkID = (req, res, next, val) => {
-    if (val * 1 > tours.length) {
+    if (req.params.id * 1 > tours.length) {
         res.status(404).json({
             status: 'Failed',
             message: 'Invalid ID'
@@ -16,7 +16,7 @@ exports.checkID = (req, res, next, val) => {
 };
 
 exports.checkBody = (req, res) => {
-    if(!req.body.name || req.body.regPrice) {
+    if(!req.body.name || req.body.price) {
         req.status(402).json({
             status: 'Failed',
             message : 'Missing name or price'
