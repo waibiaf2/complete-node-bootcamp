@@ -5,6 +5,7 @@ const tours = JSON.parse(
 );
 
 exports.checkID = (req, res, next, val) => {
+    console.log(val);
     if (req.params.id * 1 > tours.length) {
         res.status(404).json({
             status: 'Failed',
@@ -15,15 +16,18 @@ exports.checkID = (req, res, next, val) => {
     next();
 };
 
-exports.checkBody = (req, res) => {
-    if(!req.body.name || req.body.price) {
-        req.status(402).json({
+exports.checkBody = (req, res, next) => {
+    console.log(req.body);
+    if (!req.body.name || !req.body.price) {
+        res.status(400).json({
             status: 'Failed',
-            message : 'Missing name or price'
+            message: 'Price or Name properties missing...'
         })
     }
-}
     
+    next();
+};
+
 exports.getAllTours = (req, res) => {
     res.status(200).json({
         status: 'success',
@@ -94,5 +98,4 @@ exports.deleteTour = (req, res) => {
         status: 'Success',
         data: null
     })
-    
 };
