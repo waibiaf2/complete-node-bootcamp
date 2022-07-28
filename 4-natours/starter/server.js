@@ -32,6 +32,18 @@ const tourSchema = new mongoose.Schema({
   }
 });
 
+const Tour = new mongoose.model('Tour', tourSchema);
+
+const testTour = new Tour({
+    name: 'Kabale Industrial Park Tour',
+    price: 556,
+});
+
+testTour.save()
+  .then(doc =>{
+      console.log(doc);
+  });
+
 
 
 const PORT = process.env.PORT || 3000;
