@@ -2,7 +2,8 @@ const fs = require('fs')
 const users = JSON.parse(
     fs.readFileSync(`${__dirname}/../dev-data/data/users.json`)
 )
-console.log(users);
+// console.log(users);
+
 
 exports.getAllUsers = (req,res) => {
     res.status(200).json({
