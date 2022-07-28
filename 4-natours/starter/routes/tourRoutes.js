@@ -6,7 +6,8 @@ const router = express.Router();
 /*Param Middelware*/
 router.param('id', tourController.checkID);
 
-/*Routes
+/**
+ * Routes
 ************************************************/
 router
     .route('/')
