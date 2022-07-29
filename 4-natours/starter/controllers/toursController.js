@@ -1,4 +1,4 @@
-const Tour = require('./../models/tourModel');
+const Tour = require('../models/tourModel');
 
 exports.getAllTours = async (req, res) => {
     try {
@@ -22,6 +22,7 @@ exports.getAllTours = async (req, res) => {
 exports.getTour = async (req, res) => {
     try {
         const tour = await Tour.findById(req.params.id);
+        console.log(tour);
         res.status(200).json({
             status:'success',
             data: {
