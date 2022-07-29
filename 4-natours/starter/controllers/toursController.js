@@ -1,37 +1,21 @@
-const fs = require('fs');
-const Tour = require('./../models/tourModels');
+const Tour = require('./../models/tourModel');
 
-/*exports.checkID = (req, res, next, val) => {
-    console.log(val);
-    if (req.params.id * 1 > tours.length) {
+exports.getAllTours = async (req, res) => {
+    try {
+        const tours = await Tour.fi;
+        res.status(200).json({
+            status: 'success',
+            requests: tours.length,
+            data: {
+                tours
+            }
+        })
+    }catch (e) {
         res.status(404).json({
-            status: 'Failed',
-            message: 'Invalid ID'
+            status: 'fail',
+            message: e,
         })
     }
-    next();
-};*/
-
-exports.checkBody = (req, res, next) => {
-    console.log(req.body);
-    if (!req.body.name || !req.body.price) {
-        res.status(400).json({
-            status: 'Failed',
-            message: 'Price or Name properties missing...'
-        })
-    }
-    
-    next();
-};
-
-exports.getAllTours = (req, res) => {
-    res.status(200).json({
-        // status: 'success',
-        // requests: tours.length,
-        // data: {
-        //     tours
-        // }
-    })
 };
 
 exports.getTour = (req, res) => {

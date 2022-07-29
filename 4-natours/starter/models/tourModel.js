@@ -1,5 +1,14 @@
 const mongoose = require('mongoose');
 
+const DB = process.env.DATABASE.replace('<PASSWORD>', process.env.DATABASE_PASSWORD);
+
+mongoose
+    .connect(DB, {
+      useNewUrlParser: true,
+    }).then(() =>{
+      console.log(`Connection Successful`);
+    });
+
 const tourSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -18,4 +27,4 @@ const tourSchema = new mongoose.Schema({
 
 const Tour = new mongoose.model('Tour', tourSchema);
 
-modules.exports = Tour;
+module.exports = Tour;
