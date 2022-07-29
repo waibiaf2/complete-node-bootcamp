@@ -2,14 +2,15 @@ const Tour = require('./../models/tourModel');
 
 exports.getAllTours = async (req, res) => {
     try {
-        const tours = await Tour.fi;
+        const tours = await Tour.find();
+
         res.status(200).json({
             status: 'success',
             requests: tours.length,
             data: {
                 tours
             }
-        })
+        });
     }catch (e) {
         res.status(404).json({
             status: 'fail',
@@ -34,13 +35,13 @@ exports.getTour = (req, res) => {
     
     res.status(200).json({
         status:'success',
-        data: {
-            tour
-        }
+        // data: {
+        //     tour
+        // }
     })
 }
 
-exports.postTour = (req,res) => {
+exports.createTour = (req,res) => {
     // const newId = tours[tours.length -1].id + 1;
     // const newTour = Object.assign({id: newId}, req.body);
     // console.log(newTour);

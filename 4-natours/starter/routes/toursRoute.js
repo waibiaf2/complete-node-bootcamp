@@ -12,7 +12,7 @@ Routes
 router
     .route('/')
     .get(toursController.getAllTours)
-    .post(toursController.checkBody, toursController.postTour);
+    .post(toursController.createTour);
 
 router
     .route('/:id')
