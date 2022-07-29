@@ -9,40 +9,19 @@ const DB = process.env.DATABASE.replace('<PASSWORD>', process.env.DATABASE_PASSW
 mongoose
   .connect(DB, {
     useNewUrlParser: true,
-    useCreateIndex: true,
-    useFindAndModify: false
   }).then(() =>{
     console.log(`Connection Successful`);
   });
 
-const tourSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    require: [true, 'A tour name must be unique'],
-    unique: true
-  },
-  price: {
-    type: Number,
-    required: [true, 'A tour must have a price']
-  },
-  rating: {
-    type: Number,
-    default: 4.5
-  }
-});
 
-const Tour = new mongoose.model('Tour', tourSchema);
+
 
 const testTour = new Tour({
     name: 'Kabale Industrial Park Tour',
     price: 556,
 });
 
-testTour.save().then(doc =>{
-      console.log(doc);
-  }).catch(err => {
-    console.log(`ERROR 🤩🤩🤩🤩🤩🤩`, err);
-});
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, ()=>{
