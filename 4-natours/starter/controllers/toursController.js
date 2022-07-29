@@ -1,4 +1,4 @@
-const Tour = require('../models/tourModel');
+const Tour = require('./../models/tourModel');
 
 exports.getAllTours = async (req, res) => {
     try {
@@ -34,7 +34,6 @@ exports.getTour = async (req, res) => {
             message: e
         })
     }
- 
 }
 
 exports.createTour = async (req,res) => {
