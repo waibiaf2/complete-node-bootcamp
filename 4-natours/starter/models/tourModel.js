@@ -5,8 +5,8 @@ const DB = process.env.DATABASE.replace('<PASSWORD>', process.env.DATABASE_PASSW
 mongoose
     .connect(DB, {
         useNewUrlParser: true,
-        useCreateIndex: true,
-        useFindAndModify: false
+        // useCreateIndex: true,
+        // useFindAndModify: false
     })
     .then(() => {
         console.log('DB Connection successful');
@@ -16,7 +16,7 @@ const tourSchema = new mongoose.Schema({
     name: {
         type: String,
         required: [true, 'A tour must have a name'],
-        unique: true
+        unique: [true,'Tour name must be unique']
     },
     rating: {
         type: Number,
@@ -24,7 +24,7 @@ const tourSchema = new mongoose.Schema({
     },
     price: {
         type: Number,
-        required: [true, 'A tour must have a unique price']
+        required: [true, 'A tour must have a price']
     }
 });
 
