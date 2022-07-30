@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
-const DB = process.env.DATABASE.replace('<PASSWORD>', process.env.DATABASE_PASSWORD);
+const DB = process.env.DATABASE
+  .replace('<PASSWORD>', process.env.DATABASE_PASSWORD);
 
 mongoose
     .connect(DB, {
@@ -13,8 +14,8 @@ const tourSchema = new mongoose.Schema({
   name: {
     type: String,
     required: [true, 'A tour must have a name'],
-    unique: [true,'Tour name must be unique'],
-    trim: true
+    unique: [true, 'Tour name must be unique'],
+    trim: true,
   },
   duration: {
     type:Number,
@@ -22,11 +23,11 @@ const tourSchema = new mongoose.Schema({
   },
   maxGroupSize: {
     type:Number,
-    required: [true, 'Tour must have  a group size']
+    required: [true, 'Tour must have  a group size'],
   },
   difficulty: {
     type: String,
-    required: [true, 'A tour must have a difficulty']
+    required: [true, 'A tour must have a difficulty'],
   },
   ratingAverage: {
     type: Number,
@@ -59,7 +60,6 @@ const tourSchema = new mongoose.Schema({
     default: Date.now()
   },
   startDates: [Date],
-
 });
 
 const Tour = new mongoose.model('Tour', tourSchema);
