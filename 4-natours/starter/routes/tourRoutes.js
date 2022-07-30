@@ -5,14 +5,13 @@ const router = express.Router();
 
 /*Param Middelware*/
 // router.param('id', tourController.checkID);
-
 /**
- * Routes
+ ** Routes
 ************************************************/
 router
-    .route('/')
-    .get(tourController.getAllTours)
-    .post(tourController.createTour);
+  .route('/')
+  .get(tourController.getAllTours)
+  .post(tourController.createTour);
 
 router
     .route('/:id')
