@@ -2,35 +2,39 @@ const Tour = require('../models/tourModel');
 
 exports.getAllTours = async (req, res) => {
     try {
+        const queryObj = { ...req.query };
 
-    const queryObj = { ...req.query };
-    const excludedFields = ['page', 'sort', 'limit', 'fields'];
-    excludedFields.forEach(el => delete queryObj[el]);
+        const excludedFields = ['page', 'sort', 'limit', 'fields'];
 
-    console.log(req.query, queryObj);
+        excludedFields.forEach(el => delete queryObj[el]);
 
-    //Adds a query object into the find method of mongoose
-    const tours = await Tour.find(req.query);
 
-    /*const tours = await Tour.find()
-      .where('duration')
-      .equals(5)
-      .where('difficulty')
-      .equals('easy');*/
+        console.log(req.query, queryObj);
 
-    res.status(200).json({
-      status: 'success',
-      requestTime: req.requestTime,
-      results: tours.length,
-      data: {
-        tours,
-      },
-    });
+
+        //Adds a query object into the find method of mongoose
+
+        const tours = await Tour.find(req.query);
+
+        /*const tours = await Tour.find()
+          .where('duration')
+          .equals(5)
+          .where('difficulty')
+          .equals('easy');*/
+       
+        res.status(200).json({
+          status: 'success',
+          requestTime: req.requestTime,
+          results: tours.length,
+          data: {
+            tours,
+          },
+        });
   } catch (err) {
-    res.status(404).json({
-      status: 'fail',
-      message: err,
-    });
+        res.status(404).json({
+          status: 'fail',
+          message: err,
+        });
   }
 };
 
