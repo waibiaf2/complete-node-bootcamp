@@ -1,7 +1,8 @@
 const Tour = require('../models/tourModel');
 
 exports.getAllTours = async (req, res) => {
-  try {
+    try {
+
     const queryObj = { ...req.query };
     const excludedFields = ['page', 'sort', 'limit', 'fields'];
     excludedFields.forEach(el => delete queryObj[el]);
