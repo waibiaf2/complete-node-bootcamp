@@ -5,7 +5,6 @@ const DB = process.env.DATABASE.replace('<PASSWORD>', process.env.DATABASE_PASSW
 mongoose
     .connect(DB, {
         useNewUrlParser: true,
-        useCreateIndex: true,
     })
     .then(() => {
         console.log('DB Connection successful');
@@ -58,10 +57,10 @@ const tourSchema = new mongoose.Schema({
     images: [String],
     createdAt: {
         type: Date,
-        default: Date.now()
+        default: Date.now(),
+        select: false
     },
     startDates: [Date],
-    
 });
 
 const Tour = mongoose.model('Tour', tourSchema);
