@@ -12,7 +12,7 @@ Routes
 *************************************************************/
 router
     .route('/top-5-cheap')
-    .get(toursController.top_5_Cheap, toursController.getAllTours);
+    .get(toursController.top5CheapTours, toursController.getAllTours);
 
 
 router
