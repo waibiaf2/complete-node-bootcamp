@@ -11,6 +11,11 @@ const toursController = require('./../controllers/toursController');
 Routes
 *************************************************************/
 router
+    .route('/top-5-cheap')
+    .get(toursController.top_5_Cheap, toursController.getAllTours);
+
+
+router
     .route('/')
     .get(toursController.getAllTours)
     .post(toursController.createTour);
