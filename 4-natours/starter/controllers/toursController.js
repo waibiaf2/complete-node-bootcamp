@@ -1,5 +1,5 @@
 const Tour = require('../models/tourModel');
-const APIFeatures = require('../uitls/APIFeatures');
+const APIFeatures = require('./../uitls/APIFeatures');
 
 exports.top5CheapTours = (req, res, next) => {
   req.query.sort = '-ratingsAverage,price';

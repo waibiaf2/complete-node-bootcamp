@@ -2,7 +2,6 @@ class APIFeatures {
     constructor(query, queryString) {
         this.query = query;
         this.queryString = queryString;
-        
         console.log(this.queryString);
     }
     
@@ -40,7 +39,6 @@ class APIFeatures {
         } else {
             this.query = this.query.select('-__v');
         }
-    
         return this;
     }
     
