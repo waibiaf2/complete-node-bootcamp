@@ -1,11 +1,11 @@
 const Tour = require('../models/tourModel');
-const APIFeatures = require('./../uitls/APIFeatures');
+const APIFeatures = require('../uitls/APIFeatures');
 
 exports.top5CheapTours = (req, res, next) => {
   req.query.sort = '-ratingsAverage,price';
   req.query.limit = 5;
   req.query.fields = 'name,price, ratingsAverage,summary,difficulty';
-  
+
   next();
 };
 
@@ -16,14 +16,14 @@ exports.getAllTours = async (req, res) => {
     //   console.log(`There are ${numTours / page} pages`);
     //   if (skip >= numTours) throw new Error('The page does not exist');
     // }
-    
+
     //Excute Query
     const features = new APIFeatures(Tour.find(), req.query)
-        .filter()
-        .sortResults()
-        .paginate()
-        .limitFields();
-  
+      .filter()
+      .sortResults()
+      .paginate()
+      .limitFields();
+
     const tours = await features.query;
     //console.log(tours);
 
@@ -79,10 +79,10 @@ exports.createTour = async (req, res) => {
 exports.updateTour = async (req, res) => {
   try {
     const tour = await Tour.findByIdAndUpdate(req.params.id, req.body, {
-      // new: true,
-      // runValidators: true
+      new: true,
+      runValidators: true,
     });
-    
+
     res.status(201).json({
       status: 'Success',
       data: {
