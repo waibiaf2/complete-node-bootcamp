@@ -21,18 +21,12 @@ const tours = JSON.parse(fs.readFileSync(`${__dirname}/tours-simple.json`, "utf-
 //IMPORT DATA INTO DB
 const importData = async (req, res) => {
     try {
-        const toursData = await Tour.create(tours);
+        await Tour.create(tours);
         console.log('Data successfully loaded.')
-        res.status(200).json({
-            status: 'success',
-            data: {
-                tours: toursData
-            }
-        });
-        process.exit()
     }catch (e) {
         console.log(e);
     }
+    process.exit()
 }
 
 //DELETE DATA
